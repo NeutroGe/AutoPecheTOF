@@ -40,9 +40,12 @@ $last_checksum = 0
 $timer = 0
 $timer_started = 0
 
+;mise a l'echelle
+$iAppDPI = RegRead('HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics', 'AppliedDPI')
+
 ;paramétrage résolutions
 
-if @DesktopWidth = 1920 AND @DesktopHeight = 1080 Then
+if @DesktopWidth = 1920 AND @DesktopHeight = 1080 AND $iAppDPI = 96 Then
 	$bordure_gauche = 676
 	$bordure_droite = 1246
 	$bordure_hauteur = 83
@@ -52,7 +55,27 @@ if @DesktopWidth = 1920 AND @DesktopHeight = 1080 Then
 	$bouton_canne_y = 903
 EndIf
 
-if @DesktopWidth = 1680 AND @DesktopHeight = 1050 Then
+if @DesktopWidth = 1920 AND @DesktopHeight = 1080 AND $iAppDPI = 120  Then
+	$bordure_gauche = 679
+	$bordure_droite = 1238
+	$bordure_hauteur = 83
+	$pixel_endurance_x = 631
+	$pixel_endurance_y = 117
+	$bouton_canne_x = 1702
+	$bouton_canne_y = 903
+EndIf
+
+if @DesktopWidth = 1920 AND @DesktopHeight = 1080 AND $iAppDPI = 144  Then
+	$bordure_gauche = 680
+	$bordure_droite = 1238
+	$bordure_hauteur = 83
+	$pixel_endurance_x = 630
+	$pixel_endurance_y = 116
+	$bouton_canne_x = 1702
+	$bouton_canne_y = 903
+EndIf
+
+if @DesktopWidth = 1680 AND @DesktopHeight = 1050 AND $iAppDPI = 96 Then
 	$bordure_gauche = 591
 	$bordure_droite = 1091
 	$bordure_hauteur = 72
@@ -62,7 +85,7 @@ if @DesktopWidth = 1680 AND @DesktopHeight = 1050 Then
 	$bouton_canne_y = 900
 EndIf
 
-if @DesktopWidth = 1600 AND @DesktopHeight = 900 Then
+if @DesktopWidth = 1600 AND @DesktopHeight = 900 AND $iAppDPI = 96 Then
 	$bordure_gauche = 569
 	$bordure_droite = 1030
 	$bordure_hauteur = 69
@@ -72,7 +95,7 @@ if @DesktopWidth = 1600 AND @DesktopHeight = 900 Then
 	$bouton_canne_y = 753
 EndIf
 
-if @DesktopWidth = 1366 AND @DesktopHeight = 768 Then
+if @DesktopWidth = 1366 AND @DesktopHeight = 768 AND $iAppDPI = 96 Then
 	$bordure_gauche = 484
 	$bordure_droite = 882
 	$bordure_hauteur = 58
@@ -82,7 +105,7 @@ if @DesktopWidth = 1366 AND @DesktopHeight = 768 Then
 	$bouton_canne_y = 644
 EndIf
 
-if @DesktopWidth = 1280 AND @DesktopHeight = 1024 Then
+if @DesktopWidth = 1280 AND @DesktopHeight = 1024 AND $iAppDPI = 96 Then
 	$bordure_gauche = 452
 	$bordure_droite = 827
 	$bordure_hauteur = 54
@@ -92,7 +115,7 @@ if @DesktopWidth = 1280 AND @DesktopHeight = 1024 Then
 	$bouton_canne_y = 909
 EndIf
 
-if @DesktopWidth = 1280 AND @DesktopHeight = 720 Then
+if @DesktopWidth = 1280 AND @DesktopHeight = 720 AND $iAppDPI = 96 Then
 	$bordure_gauche = 452
 	$bordure_droite = 825
 	$bordure_hauteur = 54
